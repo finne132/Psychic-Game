@@ -55,8 +55,9 @@ document.onkeypress = function(kp) {
             compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
     
-    // if the guess passes validation AND is not correct, add 1 to losses, dump all the data from the soFar array,
-    // reset guesses to 9, and force the computer to pick a new random answer from the array
+    // if the guess passes validation AND the guess is wrong AND the user is out of guesses, 
+    // add 1 to losses, dump all the data from the soFar array, reset guesses to 9, and force 
+    // the computer to pick a new random answer from the array
     if (remainingGuesses === 0) {
         losses++;
         remainingGuesses = 9;
