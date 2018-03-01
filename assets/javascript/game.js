@@ -40,5 +40,29 @@ document.onkeypress = function(kp) {
         // remove one remaining guess
         remainingGuesses--
     }
-
+    // this will handle invalid key presses and alert the user
+    else{
+        alert("Invalid guess: please choose a letter of the alphabet that you haven't already guessed this round");
+    }
+   
+    // if the guess passes validation AND is correct, then add 1 to wins, dump all the data out of the soFar array, 
+    // reset guesses to 9, and force the computer to pick a new random answer from the array
+    if (compAnswer === userGuess) {
+            wins++;
+            remainingGuesses = 9;
+            soFar = [];
+            round++;
+            compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+    
+    // if the guess passes validation AND is not correct, add 1 to losses, dump all the data from the soFar array,
+    // reset guesses to 9, and force the computer to pick a new random answer from the array
+    if (remainingGuesses === 0) {
+        losses++;
+        remainingGuesses = 9;
+        soFar = [];
+        round++;
+        compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
+    }
+        
 }
