@@ -20,5 +20,9 @@ let compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
 // using onkeypress because it fires when a valid character is entered (via press AND release) not 
 // simply when a key is only pressed or released https://stackoverflow.com/questions/3396754/onkeypress-vs-onkeyup-and-onkeydown
 document.onkeypress = function(kp) {
-    console.log("something happens when a key is pressed")
+
+    // assign the pressed key to a variable 
+    // reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
+    let userGuess = String.fromCharCode(kp.keyCode).toLowerCase();
+    console.log(`the user has pressed the ${userGuess} key`);
 }
