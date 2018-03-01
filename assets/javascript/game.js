@@ -18,6 +18,8 @@ let userGuess = null;
 let compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(compAnswer);
 
+// using onkeypress because it fires when a valid character is entered (via press AND release) not 
+// simply when a key is only pressed or released https://stackoverflow.com/questions/3396754/onkeypress-vs-onkeyup-and-onkeydown
 document.onkeypress = function(kp) {
     console.log("something happens when a key is pressed")
 }
