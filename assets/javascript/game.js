@@ -25,4 +25,20 @@ document.onkeypress = function(kp) {
     // reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
     let userGuess = String.fromCharCode(kp.keyCode).toLowerCase();
     console.log(`the user has pressed the ${userGuess} key`);
+
+    // validate the keypress using array.indexOf()
+    // since indexOf returns -1 if a character is NOT present, it can be used to
+    // prevent the user from entering the same character twice in a single round
+    // the second part makes sure that the guess is only accepted if it is present
+    // in the "alphabet" array - so symbols and numbers aren't accepted and won't
+    // count against the user if they press it. 
+    // if the guess IS valid, add it to the end of the soFar array and remove a remaining guess
+
+    if (soFar.indexOf(userGuess) < 0 && alphabet.indexOf(userGuess) >= 0) {
+        // if the character pressed passes the above test, add it to the end of the soFar array
+        soFar[soFar.length]=userGuess;
+        // remove one remaining guess
+        remainingGuesses--
+    }
+
 }
