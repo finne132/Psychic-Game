@@ -17,3 +17,7 @@ let userGuess = null;
 // and then assign the number's letter equivalent to the compAnswer variable
 let compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
 console.log(compAnswer);
+
+document.onkeypress = function(kp) {
+    console.log("something happens when a key is pressed")
+}
