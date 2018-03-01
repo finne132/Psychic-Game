@@ -12,3 +12,8 @@ let round=0;
 let soFar = [];
 // this is going to be used later in the actual function to store the key pressed
 let userGuess = null;
+
+// Force the computer to pick a random number within the length of the array
+// and then assign the number's letter equivalent to the compAnswer variable
+let compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
+console.log(compAnswer);
