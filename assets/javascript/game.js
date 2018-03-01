@@ -64,5 +64,12 @@ document.onkeypress = function(kp) {
         round++;
         compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
     }
-        
+    
+    // write the results to the HTML page, see the HTML file for the matching IDs
+    document.querySelector("#wins").innerHTML = `Wins: ${wins}`;
+    document.querySelector("#losses").innerHTML = `Losses: ${losses}`;
+    document.querySelector("#guesses").innerHTML = `Guesses Remaining this round: ${remainingGuesses}`;
+    document.querySelector("#guessed").innerHTML = `Letters Guessed this round: ${soFar}`;
+    document.querySelector("#round").innerHTML = `You have played ${round} rounds`;
+
 }
