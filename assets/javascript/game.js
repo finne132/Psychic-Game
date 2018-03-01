@@ -11,6 +11,8 @@ let round=0;
 // array to hold letters guessed so far each round
 let soFar = [];
 // this is going to be used later in the actual function to store the key pressed
+// but I can't remember if it will be hoisted or not by how I wrote the function
+// so it's here anyways just in case... :P 
 let userGuess = null;
 
 // Force the computer to pick a random number within the length of the array
@@ -21,7 +23,7 @@ let compAnswer = alphabet[Math.floor(Math.random() * alphabet.length)];
 // simply when a key is only pressed or released https://stackoverflow.com/questions/3396754/onkeypress-vs-onkeyup-and-onkeydown
 document.onkeypress = function(kp) {
 
-    // assign the pressed key to a variable 
+    // assign the singular pressed key to a variable, lower-case it, and use fromCharCode which only accepts UTF-16 code units
     // reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/fromCharCode
     let userGuess = String.fromCharCode(kp.keyCode).toLowerCase();
     console.log(`the user has pressed the ${userGuess} key`);
